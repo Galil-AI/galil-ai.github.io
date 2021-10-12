@@ -6,8 +6,6 @@ Out-of-distribution (OOD) detection is a well-studied topic in supervised learni
 ### Visualizations of Learned Behaviors
 
 <p float="middle">
-  <img src="/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-trainEnv-true-measureFall.gif" width="40%" />
-  <figcaption>Train env</figcaption>
-  <img src="/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-testEnv-true-measureFall.gif" width="40%" />
-  <figcaption>Test env</figcaption>
+  <img src="/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-trainEnv-true-measureFall.gif" width="40%" title="Train env" />
+  <img src="/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-testEnv-true-measureFall.gif" width="40%" title="Test env" />
 </p>

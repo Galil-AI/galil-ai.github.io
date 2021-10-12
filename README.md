@@ -8,10 +8,21 @@ Out-of-distribution (OOD) detection is a well-studied topic in supervised learni
 #### Gravitational Experiments
 
 <p float="middle">
-  <img src="/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-trainEnv-true-measureFall.gif" width="35%" title="Train env" />
-  <img src="/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-testEnv-true-measureFall.gif" width="35%" title="Test env" />
+  <img src="/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-trainEnv-true-measureFall.gif" width="35%" caption="Train env" />
+  <img src="/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-testEnv-true-measureFall.gif" width="35%" caption="Test env" />
 </p>
+
+_Left_: Normal gravitional environment. _Right_: High gravitational environment. 
 
 Under **GalilAI**, agents learn to discern between high and low gravitational environments - while being invariant to their own mass - through a free-falling behavior. This action mimics Galileo's experiments that ultimately let to the experimental discovery of the [Equivalence Principle](https://en.wikipedia.org/wiki/Equivalence_principle).
 
 #### Wind Experiments
+When wind was added to their environments at test-time, agents learned to use their bodies as sails as well as perform front-flips and rolls in the direction of the wind, and see how far the wind carried them along.
+
+#### Friction Experiments
+Discerning between friction (training causal factor) and agent body mass (test causal factor) is a non-trivial task, as any horizontal motions are influenced by both. **GalilAI** overcomes this, by performing handstands to test bodymass while avoiding horizontal frictional forces that may confound its judgement.
+
+#### Perception Frequency
+
+#### Mass - Distributional Shift in the Environment
+Through light touch, agents learned an action sequence that would indeed push light blocks across their envirnment, but would not be forceful enough to push the heavy blocks around.

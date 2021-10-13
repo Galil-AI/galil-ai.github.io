@@ -7,13 +7,9 @@ Out-of-distribution (OOD) detection is a well-studied topic in supervised learni
 
 #### Gravitational inference whilst invariant to mass
 
-| Normal gravitional environment | High gravitional environment |
-| ------------------------------ | ---------------------------- |
+| Normal gravitational environment | High gravitational environment |
+| -------------------------------- | ------------------------------ |
 | ![Normal](/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-trainEnv-true-measureFall.gif) | ![High](/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-testEnv-true-measureFall.gif) |
-| ![Normal](/data/behaviors/cheetah-gravity/cheetah-mass1.80-gravity-15.7-trainEnv-correct-Handstand.gif)| ![High](data/behaviors/cheetah-gravity/cheetah-mass1.80-gravity-15.7-testEnv-correct-noHandstand.gif) |
-
-
-_Left_: Normal gravitional environment. _Right_: High gravitational environment. 
 
 Under **GalilAI**, agents learn to discern between high and low gravitational environments - while being invariant to their own mass - through a free-falling behavior. This action mimics Galileo's experiments that ultimately let to the experimental discovery of the [Equivalence Principle](https://en.wikipedia.org/wiki/Equivalence_principle).
 

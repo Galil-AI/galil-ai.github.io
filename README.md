@@ -6,12 +6,12 @@ Out-of-distribution (OOD) detection is a well-studied topic in supervised learni
 ### Visualizations of Learned Behaviours
 
 #### Gravitational inference whilst invariant to mass
-<figure>
-  <img src="/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-trainEnv-true-measureFall.gif" width="45%">
-  <figcaption>Train env.</figcaption>
-  <img src="/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-testEnv-true-measureFall.gif" width="45%">
-  <figcaption>Train env.</figcaption>
-</figure>
+
+| Normal gravitional environment | High gravitional environment |
+| ------------------------------ | ---------------------------- |
+| ![Normal](/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-trainEnv-true-measureFall.gif) | ![High](/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-testEnv-true-measureFall.gif) |
+| ![Normal](/data/behaviors/cheetah-gravity/cheetah-mass1.80-gravity-15.7-trainEnv-correct-Handstand.gif)| ![High](data/behaviors/cheetah-gravity/cheetah-mass1.80-gravity-15.7-testEnv-correct-noHandstand.gif) |
+
 
 _Left_: Normal gravitional environment. _Right_: High gravitational environment. 
 

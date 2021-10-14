@@ -26,9 +26,10 @@ Under **GalilAI**, agents learn to discern between high and low gravitational en
 When wind was added to their environments at test-time, agents learned to use their bodies as sails as well as perform front-flips and rolls in the direction of the wind, and see how far the wind carried them along.
 
 
-| Low friction | High friction |
+| Low mass | High mass |
 | ------------ | ------------- |
-|  |  |
+| ![low mass](data/behaviors/hopper-mass/hopper-highFriction-highMass-trainEnv-v2-correct-noHandstand.gif) | ![high mass](data/behaviors/hopper-mass/hopper-highFriction-highMass-testEnv-v2-correct-Handstand.gif) |
+| ![low](data/behaviors/cheetah-mass/cheetah-highFriction-highMass-trainEnv-correct-Flip.gif) | ![high](data/behaviors/cheetah-mass/cheetah-highFriction-highMass-testEnv-correct-noFlip.gif) |
 
 **Mass detection invariant to friction**.
 Discerning between friction (training causal factor) and agent body mass (test causal factor) is a non-trivial task, as any horizontal motions are influenced by both. **GalilAI** overcomes this, by performing handstands to test bodymass while avoiding horizontal frictional forces that may confound its judgement.

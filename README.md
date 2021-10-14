@@ -5,6 +5,7 @@ Out-of-distribution (OOD) detection is a well-studied topic in supervised learni
 
 ### Visualizations of Learned Behaviours
 
+
 | Normal gravitational environment | High gravitational environment |
 | -------------------------------- | ------------------------------ |
 | ![Normal](/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-trainEnv-true-measureFall.gif) | ![High](/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-testEnv-true-measureFall.gif) |
@@ -13,15 +14,23 @@ Out-of-distribution (OOD) detection is a well-studied topic in supervised learni
 **Gravitational inference whilst invariant to mass**.
 Under **GalilAI**, agents learn to discern between high and low gravitational environments - while being invariant to their own mass - through a free-falling behavior. This action mimics Galileo's experiments that ultimately let to the experimental discovery of the [Equivalence Principle](https://en.wikipedia.org/wiki/Equivalence_principle).
 
+
+
+| No wind environment | Windy environment |
+| ------------------- | ----------------- |
+| ![No wind](data/behaviors/hopper-wind/hopper-mass1.00-gravity3.9-trainEnv-true.gif) | ![wind](data/behaviors/hopper-wind/hopper-mass1.00-gravity3.9-testEnv-true.gif) |
+| ![No](data/behaviors/cheetah-wind/cheetah-mass0.60-gravity2.0-trainEnv-correct-backflip.gif) | ![wind](data/behaviors/cheetah-wind/cheetah-mass0.60-gravity2.0-testEnv-correct-backflip.gif) |
+| ![no wind](data/behaviors/walker-wind/walker-mass2.00-gravity9.8-trainEnv-fallBack.gif) | ![wind](data/behaviors/walker-wind/walker-mass2.00-gravity9.8-testEnv.gif)|
+
 **Wind perception whilst invariant to mass**.
 When wind was added to their environments at test-time, agents learned to use their bodies as sails as well as perform front-flips and rolls in the direction of the wind, and see how far the wind carried them along.
 
-| No wind environment | Windy environment |
-| ------------------- | ----------------- | 
-| ![No](data/behaviors/cheetah-wind/cheetah-mass0.60-gravity2.0-trainEnv-correct-backflip.gif) | ![wind](data/behaviors/cheetah-wind/cheetah-mass0.60-gravity2.0-testEnv-correct-backflip.gif) |
-| ![No wind](data/behaviors/hopper-wind/hopper-mass1.00-gravity3.9-trainEnv-true.gif) | ![wind](data/behaviors/hopper-wind/hopper-mass1.00-gravity3.9-testEnv-true.gif) |
 
-#### Mass detection invariant to friction
+| Low friction | High friction |
+| ------------ | ------------- |
+|  |  |
+
+**Mass detection invariant to friction**.
 Discerning between friction (training causal factor) and agent body mass (test causal factor) is a non-trivial task, as any horizontal motions are influenced by both. **GalilAI** overcomes this, by performing handstands to test bodymass while avoiding horizontal frictional forces that may confound its judgement.
 
 #### Perception Frequency

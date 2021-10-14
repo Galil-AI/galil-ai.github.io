@@ -7,7 +7,7 @@ Out-of-distribution (OOD) detection is a well-studied topic in supervised learni
 
 ### Visualizations of Learned Behaviours
 
-| Normal gravitational environment | High gravitational environment |
+| Normal Gravitational Environment | High Gravitational Environment |
 | -------------------------------- | ------------------------------ |
 | ![Normal](/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-trainEnv-true-measureFall.gif) | ![High](/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-testEnv-true-measureFall.gif) |
 | ![normal](data/behaviors/cheetah-gravity/cheetah-mass1.80-gravity-15.7-trainEnv-correct-Handstand.gif) | ![high gravity](data/behaviors/cheetah-gravity/cheetah-mass1.80-gravity-15.7-testEnv-correct-noHandstand.gif) |
@@ -18,7 +18,7 @@ Under **GalilAI**, agents learn to discern between high and low gravitational en
 
 <p>&nbsp;</p>
 
-| No wind environment | Windy environment |
+| Windless | Windy |
 | ------------------- | ----------------- |
 | ![No wind](data/behaviors/hopper-wind/hopper-mass1.00-gravity3.9-trainEnv-true.gif) | ![wind](data/behaviors/hopper-wind/hopper-mass1.00-gravity3.9-testEnv-true.gif) |
 | ![No](data/behaviors/cheetah-wind/cheetah-mass0.60-gravity2.0-trainEnv-correct-backflip.gif) | ![wind](data/behaviors/cheetah-wind/cheetah-mass0.60-gravity2.0-testEnv-correct-backflip.gif) |
@@ -29,7 +29,7 @@ When wind was added to their environments at test-time, agents learned to use th
 
 <p>&nbsp;</p>
 
-| Low mass | High mass |
+| Low Mass | High Mass |
 | ------------ | ------------- |
 | ![low mass](data/behaviors/hopper-mass/hopper-highFriction-highMass-trainEnv-v2-correct-noHandstand.gif) | ![high mass](data/behaviors/hopper-mass/hopper-highFriction-highMass-testEnv-v2-correct-Handstand.gif) |
 | ![low](data/behaviors/cheetah-mass/cheetah-highFriction-highMass-trainEnv-correct-Flip.gif) | ![high](data/behaviors/cheetah-mass/cheetah-highFriction-highMass-testEnv-correct-noFlip.gif) |
@@ -38,16 +38,25 @@ When wind was added to their environments at test-time, agents learned to use th
 **Mass detection invariant to friction**.
 Discerning between environment friction coefficient (training causal factor) and agent body mass (test causal factor) is a non-trivial task, as any horizontal motions are influenced by both. **GalilAI** overcomes this, by performing actions such as handstands allow the agent to correctly classify itself as heavy or light, while minimizing horizontal frictional forces that could lead to causal confusion.
 
-<p>&nbsp;</p>
-
-**Perception Frequency**.
 
 <p>&nbsp;</p>
 
-| Low mass | High mass |
+| Low Mass | High Mass |
 | ------------ | ------------- |
 | ![lowmass](data/behaviors/causal-world/CW_LowMass.gif) | ![highmass](data/behaviors/causal-world/CW_HighMass.gif)
 
-**Differentiating mass regardless of size**.
-In  the Causal  World  environment, 
-through light touch, agents learned an action sequence that would indeed push light blocks across their envirnment, but would not be forceful enough to push the heavy blocks around.
+__Differentiating mass regardless of size__.
+In  the Causal  World  environment\*, 
+through light touch, agents learned an action sequence that would indeed push light blocks across the stage, but would not be forceful enough to push heavy blocks around.
+
+\*_Note:_ The green block is an artifact of the Causal World environment; the agent is not able to see or interact with it. The agent is concerned with the red block only. 
+
+<p>&nbsp;</p>
+
+
+| Normal Framerate | Compromised Framerate |
+| ----------------------- | ---------------------------- |
+| ![normal](data/behaviors/causal-world/CW_HighControl.gif) | ![defect](data/behaviors/causal-world/CW_LowControl.gif) |
+
+**Perception Frequency**.
+Our agents were able to succesfully navigate their environments despite compromised sensor and control framerate settings. Interestingly, the agents learnt an action sequence that would successfully push a block around under compromised settings, but would not under normal settings.

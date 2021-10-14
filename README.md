@@ -3,6 +3,8 @@
 ### Abstract
 Out-of-distribution (OOD) detection is a well-studied topic in supervised learning. Extending the successes in supervised learning methods to the reinforcement learning (RL) setting, however, is difficult due to the data generating process - RL agents actively query their environment for data and this data is a function of the policy followed by the agent. Thus, an agent could neglect a shift in the environment if its policy did not lead it to explore the aspect of the environment that shifted. Therefore, to achieve safe and robust generalization in RL, there exists an unmet need for OOD detection through active experimentation. Here, we attempt to bridge this lacuna by first - defining a causal framework for OOD scenarios or environments encountered by RL agents in the wild. Then, we propose a novel task - that of Out-of-Task Distribution (OOTD) detection. We introduce an RL agent which actively experiments in a test environment and subsequently concludes whether it is OOTD or not. We name our method **GalilAI**, in honor of Galileo Galilei, as it also discovers, among other causal processes, that gravitational acceleration is independent of the mass of a body. Finally, we propose a simple probabilistic neural network baseline for comparison, which extends extant Model-Based RL. We find that our method outperforms the baseline significantly. 
 
+<p>&nbsp;</p>
+
 ### Visualizations of Learned Behaviours
 
 | Normal gravitational environment | High gravitational environment |
@@ -23,7 +25,7 @@ Under **GalilAI**, agents learn to discern between high and low gravitational en
 | ![no wind](data/behaviors/walker-wind/walker-mass2.00-gravity9.8-trainEnv-fallBack.gif) | ![wind](data/behaviors/walker-wind/walker-mass2.00-gravity9.8-testEnv.gif)|
 
 **Wind perception whilst invariant to mass**.
-When wind was added to their environments at test-time, agents learned to use their bodies as sails as well as perform front-flips and rolls in the direction of the wind, and see how far the wind carried them along.
+When wind was added to their environments at test-time, agents learned to use their bodies as sails, as well as perform front-flips and rolls in the direction of the wind, to see how far the wind carried them along.
 
 <p>&nbsp;</p>
 
@@ -34,7 +36,7 @@ When wind was added to their environments at test-time, agents learned to use th
 | ![low](data/behaviors/walker-mass/walker-highFriction-highMass-trainEnv-v1-correct-Jump.gif) | ![high](data/behaviors/walker-mass/walker-highFriction-highMass-testEnv-v1-correct-noJump.gif) |
 
 **Mass detection invariant to friction**.
-Discerning between friction (training causal factor) and agent body mass (test causal factor) is a non-trivial task, as any horizontal motions are influenced by both. **GalilAI** overcomes this, by performing handstands to test bodymass while minimizing horizontal frictional forces that may confound its judgement.
+Discerning between environment friction coefficient (training causal factor) and agent body mass (test causal factor) is a non-trivial task, as any horizontal motions are influenced by both. **GalilAI** overcomes this, by performing actions such as handstands allow the agent to correctly classify itself as heavy or light, while minimizing horizontal frictional forces that could lead to causal confusion.
 
 <p>&nbsp;</p>
 
@@ -42,5 +44,10 @@ Discerning between friction (training causal factor) and agent body mass (test c
 
 <p>&nbsp;</p>
 
-**Mass - Distributional Shift in the Environment**.
-Through light touch, agents learned an action sequence that would indeed push light blocks across their envirnment, but would not be forceful enough to push the heavy blocks around.
+| Low mass | High mass |
+| ------------ | ------------- |
+| ![lowmass](data/behaviors/causal-world/CW_LowMass.gif) | ![highmass](data/behaviors/causal-world/CW_HighMass.gif)
+
+**Differentiating mass regardless of size**.
+In  the Causal  World  environment, 
+through light touch, agents learned an action sequence that would indeed push light blocks across their envirnment, but would not be forceful enough to push the heavy blocks around.

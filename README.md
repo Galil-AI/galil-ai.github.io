@@ -7,6 +7,11 @@ Out-of-distribution (OOD) detection is a well-studied topic in supervised learni
 
 ### Visualizations of Learned Behaviours
 
+Q: *What am I looking at here?* <br>
+A: In each pair of figures, **GalilAI** performs the same action sequence in two different environments, trying to detect an OOD causal factor whilst remaining invariant to an in-distribution causal factor it has already been trained on. Here, we are interested in the interpretability of these learned action sequences, and how they lead to different observations depending on the assumed value of the OOD causal factor.
+
+<p>&nbsp;</p>
+
 | Normal Gravitational Environment | High Gravitational Environment |
 | -------------------------------- | ------------------------------ |
 | ![Normal](/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-trainEnv-true-measureFall.gif) | ![High](/data/behaviors/hopper-gravity/hopper-mass1.20-gravity-15.7-testEnv-true-measureFall.gif) |
